@@ -1,15 +1,124 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
+  <div class="page-title text-center">
+    <!-- <h1>APLIKASI AKADEMIK</h1> -->
+  </div>
+
+  <!-- Cards Section -->
+  <div class="cards-container">
+    <q-card
+      v-for="main in mainportal"
+      :key="main.title"
+      class="feature-card"
+      @click="navigateToPage(main.title)"
+      @mouseover="hoveredCard = main.title"
+      @mouseleave="hoveredCard = null"
+      :style="{
+        backgroundColor: hoveredCard === main.title ? '#f7ebb3' : 'white',
+      }"
     >
-  </q-page>
+      <q-card-section class="q-pa-none">
+        <div class="image-container">
+          <img :src="main.image" :alt="main.title" class="card-image" />
+          <div class="overlay-text">{{ main.title.toUpperCase() }}</div>
+        </div>
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
 
-<script setup>
-defineOptions({
-  name: 'IndexPage'
-});
+<script>
+import staffImage from "/images/staff-unisza.jpg";
+import fpImage from "/images/FP-unisza.jpg";
+import bendahariImage from "/images/bendahari-unisza.jpg";
+import canseloriImage from "/images/portal-dashboard.png";
+import PpengambilanImage from "/images/portal-pengambilan.png";
+import kolejKediaman from "/images/kolejkediaman.png";
+import Hepa from "/images/hepa.png";
+import ELearning from "/images/elearning.png";
+
+export default {
+  name: "FeaturePage",
+  data() {
+    return {
+      hoveredCard: null,
+      mainportal: [
+        { title: "Portal Pensyarah", image: staffImage },
+        { title: "Portal Fakulti", image: fpImage },
+        { title: "Portal Admin Akademik", image: bendahariImage },
+        { title: "Portal Dashboard", image: canseloriImage },
+        { title: "Portal Pengambilan", image: PpengambilanImage },
+        { title: "Portal Hepa", image: Hepa },
+        { title: "Portal Kewangan Pelajar", image: kolejKediaman },
+        { title: "Portal E-Learning", image: ELearning },
+      ],
+    };
+  },
+  methods: {
+    navigateToPage(title) {
+      const formattedTitle = title.replace(/\s+/g, "").toLowerCase();
+      this.$router.push(`/${formattedTitle}`);
+    },
+  },
+};
 </script>
+
+<style scoped>
+.page-title h1 {
+  font-size: 20px;
+  font-family: "Tahoma", sans-serif;
+  color: #41403b;
+  text-transform: uppercase;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1px;
+  justify-items: center;
+  padding: 15px;
+}
+
+.feature-card {
+  width: 300px;
+  height: 240px;
+  margin: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  /* width: 300px;
+  height: 200px; */
+  object-fit: cover;
+  filter: blur(0.1px);
+}
+
+.feature-card:hover .card-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.628);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+</style>
