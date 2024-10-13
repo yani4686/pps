@@ -3,7 +3,8 @@
     <div class="row q-ma-xl q-pa-xl q-gutter-sm">
       <div class="col-12 col-sm-5">
         <q-card flat bordered>
-          <q-card-section class="q-pa-md q-gutter-sm">
+          <q-card-section class="q-pa-md q-gutter-sm custom-bg">
+            <!-- <p style="color: white">BUTTON TYPE <span style="color: red">timer modal</span></p> -->
             <p>BUTTON TYPE <span style="color: red">timer modal</span></p>
 
             <div class="row justify-end">
@@ -31,19 +32,20 @@
               >
             </div>
             <!-- Buttons aligned to the right -->
-            <div class="button-container-right">
+            <!-- <div class="button-container-right">
               <q-btn class="bg-blue" @click="timerSubmit">Submit</q-btn>
               <q-btn class="bg-red" @click="timerDelete">Delete</q-btn>
               <q-btn class="bg-yellow" @click="timerClose">Close</q-btn>
               <q-btn class="bg-green" @click="timerInfo">Info</q-btn>
-            </div>
+            </div> -->
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-12 col-sm-5">
+      <!-------------------------------------------------------------------------------------------->
+      <div class="col-12 col-sm-5 q-mx-sm">
         <q-card flat bordered>
-          <q-card-section class="q-pa-md q-gutter-sm">
-            <p>BUTTON TYPE <span class="color-red">alert messagge</span></p>
+          <q-card-section class="q-pa-md q-gutter-sm custom-bg">
+            <p>BUTTON TYPE <span style="color: red">alert messagge</span></p>
             <div class="row justify-end">
               <q-btn
                 color="primary"
@@ -68,14 +70,14 @@
                 >Info</q-btn
               >
             </div>
-            <p>BUTTON TYPE <span class="color-red">alert message</span></p>
+            <!-- <p>BUTTON TYPE <span class="color-red">alert message</span></p> -->
             <!-- Buttons aligned to the right -->
-            <div class="button-container-right">
+            <!-- <div class="button-container-right">
               <q-btn class="bg-blue" @click="handleSubmit">Submit</q-btn>
               <q-btn class="bg-red" @click="handleDelete">Delete</q-btn>
               <q-btn class="bg-yellow" @click="handleClose">Close</q-btn>
               <q-btn class="bg-green" @click="handleInfo">Info</q-btn>
-            </div>
+            </div> -->
           </q-card-section>
         </q-card>
       </div>
@@ -221,5 +223,8 @@ export default {
     transform: scale(1);
     opacity: 1;
   }
+}
+.custom-bg {
+  background-color: #ead952dd; /* Replace with your desired color */
 }
 </style>
