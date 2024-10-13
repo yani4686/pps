@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-sm">
-    <q-layout view="hHh Lpr fFf" class="layout-no-scroll">
+    <q-layout view="hHh Lpr Ff" class="layout-no-scroll">
       <!------------------------------------------- Top Header ---------------------------------------->
       <q-header elevated style="background: #343331; height: 75px">
         <q-toolbar>
@@ -90,153 +90,6 @@
             </div>
           </q-item-section>
         </q-toolbar>
-        <!--------------------------------- Top Navigation Bar below the Toolbar ---------------------------------------------->
-        <!-- <div style="margin-top: 0px" class="topbar q-mt-none"> -->
-        <!-- Adjusted margin to reduce spacing -->
-        <!-- <q-tabs
-            v-model="TopNavBar"
-            dense
-            style="background: #343331; width: 100%; height: 50px"
-            class="q-ml-none"
-            active-color="white"
-            indicator-color="white"
-            align="justify"
-            narrow-indicator
-          >
-            <q-tab
-              name="dashboard"
-              label="Dashboard"
-              class="text-white"
-              @click="navigateToLandingPage"
-            /> -->
-        <!-------------------------------- Component Tab with Submenu ---------------------------------------->
-        <!-- <q-tab
-              name="component"
-              label="Component"
-              class="text-white"
-              @mouseover="openComponentMenu"
-              @mouseleave="closeComponentMenu"
-            >
-              <q-menu
-                v-model="componentMenu"
-                anchor="bottom middle"
-                self="top middle"
-                fit
-                @mouseover="keepComponentMenuOpen"
-                @mouseleave="closeComponentMenu"
-              >
-                <q-list style="min-width: 150px">
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectComponentOption('Tab')"
-                  >
-                    <q-item-section>Tab</q-item-section>
-                  </q-item>
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectComponentOption('Form')"
-                  >
-                    <q-item-section>Form</q-item-section>
-                  </q-item>
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectComponentOption('Calendar')"
-                  >
-                    <q-item-section>Calendar</q-item-section>
-                  </q-item>
-                </q-list>
-              </q-menu>
-            </q-tab> -->
-        <!-------------------------------------------------------------------->
-        <!-- <q-tab
-              name="forms"
-              label="Forms"
-              class="text-white"
-              @click="navigateToFormPage"
-            />
-            <q-tab
-              name="tables"
-              label="Tables"
-              class="text-white"
-              @click="navigateToTablePage"
-            /> -->
-        <!------------------------------ Calendar --------------------------------------------->
-        <!-- <q-tab
-              name="calendar"
-              label="Calendar"
-              class="text-white"
-              @mouseover="openCalendarMenu"
-              @mouseleave="closeCalendarMenu"
-            >
-              <q-menu
-                v-model="calendarMenu"
-                anchor="bottom middle"
-                self="top middle"
-                fit
-                @mouseover="keepCalendarMenuOpen"
-                @mouseleave="closeCalendarMenu"
-              >
-                <q-list style="min-width: 150px">
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectCalendarOption('Event Calendar')"
-                  >
-                    <q-item-section>Event Calendar</q-item-section>
-                  </q-item>
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectCalendarOption('Schedule Calendar')"
-                  >
-                    <q-item-section>Schedule Calendar</q-item-section>
-                  </q-item>
-                </q-list>
-              </q-menu>
-            </q-tab> -->
-
-        <!------------------------------------------------------------------------------------------------------------------->
-        <!------------------------------ Quick Links --------------------------------------------->
-        <!-- <q-tab
-              name="quicklink"
-              label="Quick Links"
-              class="text-white"
-              @mouseover="openQuickMenu"
-              @mouseleave="closeQuickMenu"
-            >
-              <q-menu
-                v-model="QuickMenu"
-                anchor="bottom middle"
-                self="top middle"
-                fit
-                @mouseover="keepQuickMenuOpen"
-                @mouseleave="closeQuickMenu"
-              >
-                <q-list style="min-width: 150px">
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectQuickOption('Assessment')"
-                  >
-                    <q-item-section>Assessment</q-item-section>
-                  </q-item>
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="selectCalendarOption('Schedule Calendar')"
-                  >
-                    <q-item-section>Schedule Calendar</q-item-section>
-                  </q-item>
-                </q-list>
-              </q-menu>
-            </q-tab> -->
-
-        <!------------------------------------------------------------------------------------------------------------------->
-        <!-- </q-tabs> -->
-        <!-- </div> -->
       </q-header>
       <!-------------------------------------- Sidebar (Drawer) ---------------------------------------------->
       <q-drawer
@@ -365,6 +218,13 @@
                 <q-item-section>
                   <q-item-label>
                     <a href="#/accordian" style="color: white">Accordian</a>
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <q-item-label>
+                    <a href="#/button" style="color: white">Button</a>
                   </q-item-label>
                 </q-item-section>
               </q-item>
@@ -579,73 +439,6 @@ export default {
         return [];
       }
     });
-    //------------------------------------------------------- Component Menu --------------------------------------------------
-    // const openComponentMenu = (tabName) => {
-    //   hoveredTab.value = tabName;
-    //   componentMenu.value = true;
-    // };
-
-    // const closeComponentMenu = () => {
-    //   componentMenu.value = false;
-    //   hoveredTab.value = null;
-    // };
-
-    // const keepComponentMenuOpen = () => {
-    //   componentMenu.value = true;
-    // };
-
-    // const selectComponentOption = (option) => {
-    //   console.log("Selected: ${option}");
-
-    // Close the menu
-    // componentMenu.value = false;
-
-    // Check the selected option and navigate accordingly
-    //   if (option === "Tab") {
-    //     window.location.href = "#/landingpage/tab";
-    //   }
-    //   if (option === "Form") {
-    //     window.location.href = "#/landingpage/form";
-    //   }
-    // };
-
-    // const navigateToLandingPage = () => {
-    //   router.push("/landingpage");
-    // };
-    // const navigateToFormPage = () => {
-    //   router.push("/landingpage/form");
-    // };
-    // const navigateToTablePage = () => {
-    //   router.push("/landingpage/report-table");
-    // };
-    //----------------------------------------------------------- Calendar Menu -----------------------------------------------------
-    // const openCalendarMenu = (tabName) => {
-    //   hoveredTab.value = tabName;
-    //   calendarMenu.value = true;
-    // };
-
-    // const closeCalendarMenu = () => {
-    //   calendarMenu.value = false;
-    //   hoveredTab.value = null;
-    // };
-
-    // const keepCalendarMenuOpen = () => {
-    //   calendarMenu.value = true;
-    // };
-
-    // const selectCalendarOption = (option) => {
-    //   console.log("Selected: ${option}");
-
-    // Close the menu
-    // calendarMenu.value = false;
-
-    // Check the selected option and navigate accordingly
-    //   if (option === "Event Calendar") {
-    //     window.location.href = "#/landingpage/calendar-calendar";
-    //   } else if (option === "Schedule Calendar") {
-    //     window.location.href = "#/landingpage/schedule-calendar";
-    //   }
-    // };
 
     //------------------------------------------------- Sidebar Menu ---------------------------------------------
 
@@ -761,5 +554,10 @@ export default {
 .user-info small {
   color: gray;
   font-size: 12px;
+}
+.q-footer {
+  position: static; /* or relative, depending on your layout needs */
+  bottom: auto;
+  margin-top: auto; /* ensures it doesn't get pushed upwards */
 }
 </style>

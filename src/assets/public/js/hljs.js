@@ -4958,7 +4958,7 @@
         Component: t,
         VuePlugin: {
           install: function (e) {
-            e.component("highLightjs", t);
+            e.component("HighLightjs", t);
           },
         },
       };

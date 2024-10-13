@@ -197,14 +197,6 @@
                 size="xs"
                 style="margin-left: 20px"
               />
-              <q-radio
-                v-model="form.radioButton"
-                label="Option 4"
-                val="opt4"
-                name="radioButton"
-                size="xs"
-                style="margin-left: 20px"
-              />
             </div>
           </div>
 
@@ -236,14 +228,6 @@
                 v-model="form.CheckboxButton"
                 label="Option C"
                 val="optC"
-                name="CheckboxButton"
-                size="xs"
-                style="margin-left: 20px"
-              />
-              <q-checkbox
-                v-model="form.CheckboxButton"
-                label="Option D"
-                val="optD"
                 name="CheckboxButton"
                 size="xs"
                 style="margin-left: 20px"
@@ -484,14 +468,6 @@
                   size="xs"
                   style="margin-left: 20px"
                 />
-                <q-radio
-                  v-model="form.radioButton"
-                  label="Option 4"
-                  val="opt4"
-                  name="radioButton"
-                  size="xs"
-                  style="margin-left: 20px"
-                />
               </div>
             </div>
           </div>
@@ -527,14 +503,6 @@
                   v-model="form.CheckboxButton"
                   label="Option C"
                   val="optC"
-                  name="CheckboxButton"
-                  size="xs"
-                  style="margin-left: 20px"
-                />
-                <q-checkbox
-                  v-model="form.CheckboxButton"
-                  label="Option D"
-                  val="optD"
                   name="CheckboxButton"
                   size="xs"
                   style="margin-left: 20px"
@@ -809,14 +777,6 @@
                   size="xs"
                   style="margin-left: 20px"
                 />
-                <q-radio
-                  v-model="form.radioButton"
-                  label="Option 4"
-                  val="opt4"
-                  name="radioButton"
-                  size="xs"
-                  style="margin-left: 20px"
-                />
               </div>
             </div>
           </div>
@@ -854,14 +814,6 @@
                   v-model="form.CheckboxButton"
                   label="Option C"
                   val="optC"
-                  name="CheckboxButton"
-                  size="xs"
-                  style="margin-left: 20px"
-                />
-                <q-checkbox
-                  v-model="form.CheckboxButton"
-                  label="Option D"
-                  val="optD"
                   name="CheckboxButton"
                   size="xs"
                   style="margin-left: 20px"
@@ -1311,8 +1263,8 @@ hr {
 }
 .q-card > div:nth-child(1 of :not(.q--avoid-card-border)),
 .q-card > img:nth-child(1 of :not(.q--avoid-card-border)) {
-  background-color: #f5bc11c7;
-  padding: 15px;
+  background-color: #fdebb497;
+  padding: 10px;
   color: black;
   /* color: rgb(31, 31, 31); */
 }

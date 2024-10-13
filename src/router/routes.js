@@ -160,6 +160,11 @@ const routes = [
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
       {
+        path: "button",
+        component: () => import("pages/ComponentButton.vue"),
+        meta: { hideDrawer: false, hideRoleSelection: true },
+      },
+      {
         path: "accordian",
         component: () => import("pages/ComponentCollapsible.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
