@@ -5,21 +5,27 @@
         <q-card flat bordered>
           <q-card-section class="q-pa-md q-gutter-sm">
             <p>BUTTON TYPE <span style="color: red">timer modal</span></p>
-            <q-btn class="bg-blue" @click="timerSubmit">Submit</q-btn>
-            <q-btn class="bg-red" @click="timerDelete">Delete</q-btn>
-            <q-btn class="bg-yellow" @click="timerClose">Close</q-btn>
-            <q-btn class="bg-green" @click="timerInfo">Info</q-btn>
+            <!-- Buttons aligned to the right -->
+            <div class="button-container-right">
+              <q-btn class="bg-blue" @click="timerSubmit">Submit</q-btn>
+              <q-btn class="bg-red" @click="timerDelete">Delete</q-btn>
+              <q-btn class="bg-yellow" @click="timerClose">Close</q-btn>
+              <q-btn class="bg-green" @click="timerInfo">Info</q-btn>
+            </div>
           </q-card-section>
         </q-card>
       </div>
       <div class="col-12 col-sm-5">
         <q-card flat bordered>
           <q-card-section class="q-pa-md q-gutter-sm">
-            <p>BUTTON TYPE <span class="color-red">alert messagge</span></p>
-            <q-btn class="bg-blue" @click="handleSubmit">Submit</q-btn>
-            <q-btn class="bg-red" @click="handleDelete">Delete</q-btn>
-            <q-btn class="bg-yellow" @click="handleClose">Close</q-btn>
-            <q-btn class="bg-green" @click="handleInfo">Info</q-btn>
+            <p>BUTTON TYPE <span class="color-red">alert message</span></p>
+            <!-- Buttons aligned to the right -->
+            <div class="button-container-right">
+              <q-btn class="bg-blue" @click="handleSubmit">Submit</q-btn>
+              <q-btn class="bg-red" @click="handleDelete">Delete</q-btn>
+              <q-btn class="bg-yellow" @click="handleClose">Close</q-btn>
+              <q-btn class="bg-green" @click="handleInfo">Info</q-btn>
+            </div>
           </q-card-section>
         </q-card>
       </div>
@@ -48,9 +54,6 @@
           <div class="text-h6">Information</div>
           <div>This is the info message that will close automatically.</div>
         </q-card-section>
-        <!-- <q-card-actions>
-          <q-btn flat label="Close" @click="closeInfoDialog" />
-        </q-card-actions> -->
       </q-card>
     </q-dialog>
   </q-page>
@@ -133,6 +136,13 @@ export default {
 </script>
 
 <style scoped>
+/* Flex container to align buttons to the right */
+.button-container-right {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 0.5rem; /* Space between buttons */
+}
+
 /* Container for the checkmark icon */
 .icon-container {
   display: flex;
