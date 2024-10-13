@@ -1,6 +1,6 @@
 <template>
-  <div class="q-pa-sm">
-    <q-layout view="hHh Lpr Ff" class="layout-no-scroll">
+  <div class="q-pa-sm full-height-layout">
+    <q-layout view="hHh Lpr Ff" class="layout-no-scroll full-height-layout">
       <!------------------------------------------- Top Header ---------------------------------------->
       <q-header elevated style="background: #343331; height: 75px">
         <q-toolbar>
@@ -13,7 +13,12 @@
                 round
                 dense
                 icon="menu"
-                style="margin-bottom: 20px; margin-left: -15px"
+                style="
+                  margin-bottom: 20px;
+                  margin-left: -15px;
+                  overflow-x: hidden;
+                  overflow-y: hidden;
+                "
               />
               <img
                 src="images/unisza_logo.png"
@@ -102,6 +107,7 @@
         style="background: #343331; width: 250px"
         @mouseover="miniState = false"
         @mouseout="miniState = true"
+        class="full-height-drawer"
       >
         <q-list>
           <!-- Login Menu -->
@@ -271,7 +277,7 @@
       </q-drawer>
 
       <!-- Page Content -->
-      <q-page-container class="q-mt-none">
+      <q-page-container class="q-mt-none full-height-page-container">
         <!-- Image in the corner corner-image-->
         <div class="corner-image"></div>
         <!------------------------------------------- Breadcrumb -------------------------------------------->
@@ -499,15 +505,37 @@ export default {
 </script>
 
 <style scoped>
+.full-height-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Take up full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.q-page-container {
+  flex-grow: 1; /* Take remaining space */
+  overflow-y: auto; /* Enable scrolling only when content exceeds height */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  max-width: 100vw; /* Ensure no content exceeds viewport width */
+}
+
+.q-drawer {
+  height: 100%;
+}
+
+.q-header {
+  flex-shrink: 0;
+}
+
+.q-footer {
+  flex-shrink: 0; /* Ensures footer stays at the bottom */
+  margin-top: auto; /* Push footer to the bottom */
+}
+
 .submenu {
   margin-left: 40px;
 }
 
-.q-page-container {
-  width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
-}
 .adjusted-image {
   /* width: 100%;
   height: auto; */
@@ -554,10 +582,5 @@ export default {
 .user-info small {
   color: gray;
   font-size: 12px;
-}
-.q-footer {
-  position: static; /* or relative, depending on your layout needs */
-  bottom: auto;
-  margin-top: auto; /* ensures it doesn't get pushed upwards */
 }
 </style>
