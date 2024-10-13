@@ -556,8 +556,8 @@ export default {
   font-size: 12px;
 }
 .q-footer {
-  position: static; /* or relative, depending on your layout needs */
+  position: static;
   bottom: auto;
-  margin-top: auto; /* ensures it doesn't get pushed upwards */
+  margin-top: auto;
 }
 </style>

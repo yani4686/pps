@@ -1,14 +1,34 @@
 <template>
   <q-page class="q-pa-sm justify-center">
-    <div class="row q-pa-sm q-gutter-sm">
+    <div class="row q-ma-xl q-pa-xl q-gutter-sm">
       <div class="col-12 col-sm-5">
         <q-card flat bordered>
           <q-card-section class="q-pa-md q-gutter-sm">
             <p>BUTTON TYPE <span style="color: red">timer modal</span></p>
-            <q-btn class="bg-blue" @click="timerSubmit">Submit</q-btn>
-            <q-btn class="bg-red" @click="timerDelete">Delete</q-btn>
-            <q-btn class="bg-yellow" @click="timerClose">Close</q-btn>
-            <q-btn class="bg-green" @click="timerInfo">Info</q-btn>
+            <div class="row justify-end">
+              <q-btn
+                color="primary"
+                class="q-ma-sm"
+                style="color: white"
+                @click="timerSubmit"
+                >Submit</q-btn
+              >
+              <q-btn
+                color="negative"
+                class="q-ma-sm"
+                style="color: white"
+                @click="timerDelete"
+                >Delete</q-btn
+              >
+              <!-- <q-btn class="bg-yellow" @click="timerClose">Close</q-btn> -->
+              <q-btn
+                color="positive"
+                class="q-ma-sm"
+                style="color: white"
+                @click="timerInfo"
+                >Info</q-btn
+              >
+            </div>
           </q-card-section>
         </q-card>
       </div>
@@ -16,10 +36,30 @@
         <q-card flat bordered>
           <q-card-section class="q-pa-md q-gutter-sm">
             <p>BUTTON TYPE <span class="color-red">alert messagge</span></p>
-            <q-btn class="bg-blue" @click="handleSubmit">Submit</q-btn>
-            <q-btn class="bg-red" @click="handleDelete">Delete</q-btn>
-            <q-btn class="bg-yellow" @click="handleClose">Close</q-btn>
-            <q-btn class="bg-green" @click="handleInfo">Info</q-btn>
+            <div class="row justify-end">
+              <q-btn
+                color="primary"
+                class="q-ma-sm"
+                style="color: white"
+                @click="handleSubmit"
+                >Submit</q-btn
+              >
+              <q-btn
+                color="negative"
+                class="q-ma-sm"
+                style="color: white"
+                @click="handleDelete"
+                >Delete</q-btn
+              >
+              <!-- <q-btn class="bg-yellow" @click="handleClose">Close</q-btn> -->
+              <q-btn
+                color="positive"
+                class="q-ma-sm"
+                style="color: white"
+                @click="handleInfo"
+                >Info</q-btn
+              >
+            </div>
           </q-card-section>
         </q-card>
       </div>
