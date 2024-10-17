@@ -4,6 +4,7 @@
   </div>
 
   <!-- Cards Section -->
+  {{ users.username }}
   <div class="cards-container">
     <q-card
       v-for="main in mainportal"
@@ -37,11 +38,28 @@ import PpengambilanImage from "/images/portal-pengambilan.png";
 import kolejKediaman from "/images/kolejkediaman.png";
 import Hepa from "/images/hepa.png";
 import ELearning from "/images/elearning.png";
+import { api } from "src/boot/axios";
+import { useQuasar } from "quasar";
+import { ref } from "vue";
 
 export default {
   name: "FeaturePage",
   data() {
+    var $q = useQuasar();
+    var token = $q.sessionStorage.getItem("token");
+    var users = ref({});
+
+    whois();
+
+    function whois() {
+      api.get("/validateToken/" + token).then((res) => {
+        users.value.username = res.data.data.name;
+        console.log(res.data.data.name);
+      });
+    }
+
     return {
+      users,
       hoveredCard: null,
       mainportal: [
         { title: "Menu 1", image: staffImage, disabled: false },
