@@ -102,7 +102,7 @@ const routes = [
         // meta: { hideBreadcrumbs: true, hideRoleSelection: true }, // Index page, hide breadcrumbs and role selection
       },
       {
-        path: "portalpensyarah",
+        path: "menu1",
         component: () => import("pages/LandingPage1.vue"),
         meta: {
           hideDrawer: false,
@@ -112,7 +112,7 @@ const routes = [
         // meta: { hideBreadcrumbs: false, hideRoleSelection: false }, // show breadcrumbs and role selection
       },
       {
-        path: "portalfakulti",
+        path: "menu2",
         component: () => import("pages/LandingPage2.vue"),
         meta: {
           hideDrawer: false,
@@ -122,7 +122,7 @@ const routes = [
         // meta: { hideBreadcrumbs: false, hideRoleSelection: false }, // show breadcrumbs and role selection
       },
       {
-        path: "portaladminakademik",
+        path: "menu3",
         component: () => import("pages/LandingPage3.vue"),
         meta: {
           hideDrawer: false,

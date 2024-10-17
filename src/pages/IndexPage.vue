@@ -9,13 +9,15 @@
       v-for="main in mainportal"
       :key="main.title"
       class="feature-card"
-      @click="navigateToPage(main.title)"
+      :class="{ disabled: main.disabled }"
+      @click="!main.disabled && navigateToPage(main.title)"
       @mouseover="hoveredCard = main.title"
       @mouseleave="hoveredCard = null"
       :style="{
         backgroundColor: hoveredCard === main.title ? '#f7ebb3' : 'white',
       }"
     >
+      <q-tooltip v-if="main.disabled"> Not available </q-tooltip>
       <q-card-section class="q-pa-none">
         <div class="image-container">
           <img :src="main.image" :alt="main.title" class="card-image" />
@@ -42,14 +44,14 @@ export default {
     return {
       hoveredCard: null,
       mainportal: [
-        { title: "Portal Pensyarah", image: staffImage },
-        { title: "Portal Fakulti", image: fpImage },
-        { title: "Portal Admin Akademik", image: bendahariImage },
-        { title: "Portal Dashboard", image: canseloriImage },
-        { title: "Portal Pengambilan", image: PpengambilanImage },
-        { title: "Portal Hepa", image: Hepa },
-        { title: "Portal Kewangan Pelajar", image: kolejKediaman },
-        { title: "Portal E-Learning", image: ELearning },
+        { title: "Menu 1", image: staffImage, disabled: false },
+        { title: "Menu 2", image: fpImage, disabled: false },
+        { title: "Menu 3", image: bendahariImage, disabled: false },
+        { title: "Menu 4", image: canseloriImage, disabled: true }, // Disabled
+        { title: "Menu 5", image: PpengambilanImage, disabled: true }, // Disabled
+        { title: "Menu 6", image: Hepa, disabled: true }, // Disabled
+        { title: "Menu 7", image: kolejKediaman, disabled: true }, // Disabled
+        { title: "Menu 8", image: ELearning, disabled: true }, // Disabled
       ],
     };
   },
