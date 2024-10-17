@@ -85,8 +85,8 @@
                 </q-avatar>
 
                 <div class="user-info">
-                  <span>{{ user.username }}</span>
-                  <small>{{ user.role }}</small>
+                  {{ users.username }}
+                  <small>{{ users.email }}</small>
                 </div>
 
                 <q-btn flat icon="arrow_drop_down" size="sm" />
@@ -336,6 +336,8 @@ import { useQuasar } from "quasar";
 import { ref, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import NavLink from "../components/NavLink.vue";
+import { api } from "src/boot/axios";
+//import { ref } from "vue";
 
 export default {
   components: {
@@ -343,6 +345,18 @@ export default {
   },
   setup() {
     const $q = useQuasar();
+    var token = $q.sessionStorage.getItem("token");
+    var users = ref({});
+
+    whois();
+
+    function whois() {
+      api.get("/validateToken/" + token).then((res) => {
+        users.value.username = res.data.data.name;
+        console.log(res.data.data.name);
+      });
+    }
+
     const router = useRouter();
     const route = useRoute();
 
@@ -468,11 +482,12 @@ export default {
     ];
 
     return {
-      user: {
-        username: "nsyazwanimyusoff",
-        role: "Admin",
-        // avatar: require('@/assets/user-avatar.png'), // Replace with the actual path to the avatar image
-      },
+      users,
+      // user: {
+      //   username: "nsyazwanimyusoff",
+      //   role: "Admin",
+      //   // avatar: require('@/assets/user-avatar.png'), // Replace with the actual path to the avatar image
+      // },
       // Role selection properties
       selectedRole: null,
       roles: [
