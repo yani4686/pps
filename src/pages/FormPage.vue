@@ -39,6 +39,7 @@
                 >Input Textarea<span style="color: red">*</span></label
               >
             </div>
+
             <div class="col-12 col-sm-9">
               <q-input
                 color="blue"
@@ -49,6 +50,17 @@
                 :rules="[(val) => !!val || 'Name is required']"
                 style="margin: 0 12px"
               />
+            </div>
+          </div>
+          <!------ Text Editor ------------->
+          <div class="row q-gutter-none">
+            <div class="col-12 col-sm-3">
+              <label class="col-form-label q-mb-none" style="margin-left: 20px"
+                >Input Text Editor<span style="color: red">*</span></label
+              >
+            </div>
+            <div class="col-12 col-sm-9 q-mb-lg">
+              <q-editor v-model="editor" style="margin: 0 12px" />
             </div>
           </div>
 
@@ -1121,6 +1133,7 @@ import { ref } from "vue";
 
 export default {
   setup() {
+    const editor = ref([]);
     const stringOptions = ["Google", "Facebook", "Twitter", "Apple", "Oracle"];
 
     const color = ref("cyan");
@@ -1218,6 +1231,7 @@ export default {
     return {
       color,
       form,
+      editor,
       model,
       options,
       filterFn,
