@@ -1,6 +1,14 @@
 const routes = [
   //-------------- WHITE LAYOUT ---------------------//
   {
+    path: "/",
+    component: () => import("pages/LoginProcess.vue"),
+  },
+  {
+    path: "/:token",
+    component: () => import("pages/LoginProcess.vue"),
+  },
+  {
     path: "/portal",
     component: () => import("src/layouts/PortalLayoutwhite.vue"),
     children: [
@@ -46,7 +54,6 @@ const routes = [
       },
     ],
   },
-
   {
     path: "/forgot-password",
     component: () => import("pages/forgotPassword.vue"),
@@ -58,11 +65,11 @@ const routes = [
 
   //-------------- GUIDELINE ---------------------//
   {
-    path: "",
+    path: "/dashboard",
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "dashboard",
+        path: "",
         component: () => import("pages/IndexPage.vue"),
         meta: {
           hideDrawer: true,
