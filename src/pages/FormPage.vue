@@ -52,7 +52,7 @@
               />
             </div>
           </div>
-          <!------ Text Editor ------------->
+          <!------ Text Editor WYSIWYG ------------->
           <div class="row q-gutter-none">
             <div class="col-12 col-sm-3">
               <label class="col-form-label q-mb-none" style="margin-left: 20px"
@@ -570,6 +570,21 @@
               </div>
             </div>
           </div>
+          <!--------------- Text Editor WYSIWYG ----------------------->
+          <div class="col-12 col-sm-6">
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                <label
+                  class="col-form-label q-mb-none"
+                  style="margin-left: 20px"
+                  >Input Text Editor <span style="color: red">*</span></label
+                >
+              </div>
+              <div class="col-12 col-sm-9 q-mb-md">
+                <q-editor v-model="editor" style="margin: 0 12px" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Submit button -->
@@ -633,6 +648,17 @@
               required
               style="margin-right: 12px"
             />
+          </div>
+        </div>
+        <!------ Text Editor WYSIWYG ------------->
+        <div class="row q-gutter-none q-mt-sm">
+          <div class="col-12 col-sm-2">
+            <label class="col-form-label q-mb-none" style="margin-left: 20px">
+              Input Text Editor <span style="color: red">*</span>
+            </label>
+          </div>
+          <div class="col-12 col-sm-10">
+            <q-editor v-model="editor" style="margin-right: 12px" />
           </div>
         </div>
 
@@ -896,7 +922,6 @@
         >
           <q-step :name="1" title="Step 1" :done="step > 1">
             <!-- Input type text -->
-
             <div class="row q-gutter-none q-mt-md">
               <div class="col-12 col-sm-6">
                 <div class="row">
@@ -949,7 +974,7 @@
               </div>
             </div>
 
-            <!-- Input type text -->
+            <!-- Multiple Dropdown -->
             <div class="row q-gutter-none">
               <div class="col-12 col-sm-6">
                 <div class="row">
@@ -976,7 +1001,7 @@
                 </div>
               </div>
 
-              <!-- Dropdown Single select -->
+              <!-- Filter Dropdown -->
               <div class="col-12 col-sm-6">
                 <div class="row">
                   <div class="col-12 col-sm-3">
@@ -1007,7 +1032,7 @@
               </div>
             </div>
 
-            <!-- Input type text -->
+            <!-- Date -->
             <div class="row q-gutter-none">
               <div class="col-12 col-sm-6">
                 <div class="row">
@@ -1022,7 +1047,7 @@
                       outlined
                       dense
                       label="yyyy/mm/dd"
-                      style="margin: 0 12px"
+                      style="margin: 0 12px; margin-bottom: auto"
                     >
                       <template v-slot:prepend>
                         <q-icon name="event" class="cursor-pointer">
@@ -1049,6 +1074,47 @@
                         </q-icon>
                       </template>
                     </q-input>
+                  </div>
+                </div>
+              </div>
+              <!------------------ Input type text Textarea ------------------------------->
+              <div class="col-12 col-sm-6">
+                <div class="row">
+                  <div class="col-12 col-sm-3">
+                    <label
+                      class="col-form-label q-mb-none"
+                      style="margin-left: 20px"
+                    >
+                      Input Text Area <span style="color: red">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-sm-9">
+                    <q-input
+                      color="blue"
+                      type="textarea"
+                      v-model="form.inputtextarea"
+                      outlined
+                      dense
+                      :rules="[(val) => !!val || 'Name is required']"
+                      required
+                      style="margin: 0 12px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!---------------------------------- Text Editor WYSIWYG --------------------------------------------->
+              <div class="col-12 col-sm-6">
+                <div class="row">
+                  <div class="col-12 col-sm-3">
+                    <label
+                      class="col-form-label q-mb-none"
+                      style="margin-left: 20px"
+                    >
+                      Input Text Editor <span style="color: red">*</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-sm-9 q-mb-md">
+                    <q-editor v-model="editor" style="margin: 0 12px" />
                   </div>
                 </div>
               </div>
@@ -1107,12 +1173,26 @@
           </q-step>
 
           <template v-slot:navigation>
-            <q-stepper-navigation class="row q-gutter-md justify-end">
-              <q-btn
+            <q-stepper-navigation class="row q-gutter-sm justify-end">
+              <q-card-actions align="right" class="submit-button">
+                <q-btn
+                  :label="step === 3 ? 'Finish' : 'Continue'"
+                  type="submit"
+                  color="primary"
+                  @click="onContinueStep"
+                />
+
+                <!-- <q-btn
                 @click="onContinueStep"
                 color="primary"
                 :label="step === 3 ? 'Finish' : 'Continue'"
-              ></q-btn>
+              ></q-btn> -->
+              </q-card-actions>
+              <!-- <q-btn
+                @click="onContinueStep"
+                color="primary"
+                :label="step === 3 ? 'Finish' : 'Continue'"
+              ></q-btn> -->
               <q-btn
                 v-if="step > 1"
                 flat
