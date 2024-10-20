@@ -26,45 +26,45 @@
               map-options
               option-value="code"
               option-label="name"
-              :disable="!selectedFaculty" <!-- Disable if no faculty is selected -->
+              :disable="!selectedFaculty"
             />
           </q-col>
         </div>
       </q-card-section>
-         <!-- Report Table -->
-         <q-card-section>
-          <q-table
-            v-if="selectedFaculty && selectedProgram"
-            :rows="reportData"
-            :columns="columns"
-            row-key="id"
-          >
-            <template v-slot:body-cell-name="props">
-              <q-td :props="props">{{ props.row.name }}</q-td>
-            </template>
-            <template v-slot:body-cell-code="props">
-              <q-td :props="props">{{ props.row.code }}</q-td>
-            </template>
-          </q-table>
-        </q-card-section>
+      <!-- Report Table -->
+      <q-card-section>
+        <q-table
+          v-if="selectedFaculty && selectedProgram"
+          :rows="reportData"
+          :columns="columns"
+          row-key="id"
+        >
+          <template v-slot:body-cell-name="props">
+            <q-td :props="props">{{ props.row.name }}</q-td>
+          </template>
+          <template v-slot:body-cell-code="props">
+            <q-td :props="props">{{ props.row.code }}</q-td>
+          </template>
+        </q-table>
+      </q-card-section>
     </q-card>
   </q-page>
 </template>
 <script>
-  import { ref, watch } from 'vue';
+import { ref, watch } from "vue";
 
 export default {
   setup() {
     // Faculty and Program data (can be fetched from API)
     const faculties = ref([
-      { code: 'F01', name: 'Faculty of Science' },
-      { code: 'F02', name: 'Faculty of Engineering' },
+      { code: "F01", name: "Faculty of Science" },
+      { code: "F02", name: "Faculty of Engineering" },
     ]);
 
     const programs = ref([
-      { code: 'P01', name: 'Computer Science', faculty: 'F01' },
-      { code: 'P02', name: 'Biology', faculty: 'F01' },
-      { code: 'P03', name: 'Mechanical Engineering', faculty: 'F02' },
+      { code: "P01", name: "Computer Science", faculty: "F01" },
+      { code: "P02", name: "Biology", faculty: "F01" },
+      { code: "P03", name: "Mechanical Engineering", faculty: "F02" },
     ]);
 
     // Selected Faculty and Program
@@ -76,17 +76,20 @@ export default {
 
     // Table Columns
     const columns = [
-      { name: 'name', label: 'Name', field: 'name', align: 'left' },
-      { name: 'code', label: 'Code', field: 'code', align: 'left' },
+      { name: "name", label: "Name", field: "name", align: "left" },
+      { name: "code", label: "Code", field: "code", align: "left" },
     ];
 
     // Watch for changes in the selected faculty and program
     watch([selectedFaculty, selectedProgram], () => {
+      console.log("Selected Faculty:", selectedFaculty.value);
+      console.log("Selected Program:", selectedProgram.value);
+      console.log("Programs List:", programs.value);
       if (selectedFaculty.value && selectedProgram.value) {
-        // Filter report data based on faculty and program selection
         reportData.value = programs.value.filter(
           (program) =>
-            program.faculty === selectedFaculty.value && program.code === selectedProgram.value
+            program.faculty === selectedFaculty.value &&
+            program.code === selectedProgram.value
         );
       } else {
         reportData.value = [];
@@ -103,4 +106,4 @@ export default {
     };
   },
 };
-  </script>
+</script>

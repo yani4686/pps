@@ -192,8 +192,8 @@ const routes = [
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
       {
-        path: "report-table2",
-        component: () => import("pages/filter_ReportTable.vue"),
+        path: "dropdown-table",
+        component: () => import("pages/DropdownFiltertable.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
       {
