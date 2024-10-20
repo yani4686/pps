@@ -192,6 +192,11 @@ const routes = [
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
       {
+        path: "report-table2",
+        component: () => import("pages/filter_ReportTable.vue"),
+        meta: { hideDrawer: false, hideRoleSelection: true },
+      },
+      {
         path: "event-calendar",
         component: () => import("pages/EventCalendar.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
