@@ -7,7 +7,40 @@
         >
       </div>
       <hr />
+      <q-card-section> </q-card-section>
+
       <q-card-section>
+        <!-------------------------------------- DROPDOWN FACULTY AND PROGRAM --------------------------------------------->
+        <div class="row q-col-gutter-sm">
+          <div class="col">
+            <q-select
+              v-model="selectedFaculty"
+              :options="faculties"
+              label="Select Faculty"
+              emit-value
+              map-options
+              option-value="code"
+              option-label="name"
+              outlined
+              dense
+            ></q-select>
+          </div>
+          <div class="col">
+            <q-select
+              v-model="selectedProgram"
+              :options="filteredPrograms"
+              label="Select Program"
+              emit-value
+              map-options
+              option-value="code"
+              option-label="name"
+              :disable="!selectedFaculty"
+              outlined
+              dense
+            ></q-select>
+          </div>
+        </div>
+        <!------------------------------ BUTTON ADD NEW, EXPORT PDF AND EXPORT EXCEL -------------------------- -->
         <q-row class="q-col-gutter-none items-center">
           <!-- Add New Row Button -->
           <q-col>
@@ -37,44 +70,8 @@
               </q-tooltip>
             </q-btn>
           </q-col>
-
-          <!-- Both Dropdowns in a Single Column -->
-          <q-col class="q-col-auto">
-            <div class="row q-col-gutter-sm justify-end">
-              <!-- Faculty Dropdown -->
-              <q-select
-                v-model="selectedFaculty"
-                :options="faculties"
-                label="Select Faculty"
-                emit-value
-                map-options
-                option-value="code"
-                option-label="name"
-                outlined
-                dense
-                :style="{ width: '300px' }"
-              />
-
-              <!-- Program Dropdown -->
-              <q-select
-                v-model="selectedProgram"
-                :options="filteredPrograms"
-                label="Select Program"
-                emit-value
-                map-options
-                option-value="code"
-                option-label="name"
-                :disable="!selectedFaculty"
-                outlined
-                dense
-                :style="{ width: '300px' }"
-              />
-            </div>
-          </q-col>
         </q-row>
-      </q-card-section>
-
-      <q-card-section>
+        <!----------------------------- REPORT TABLE ----------------------------------------------------->
         <q-table
           v-if="selectedFaculty && selectedProgram"
           :rows="reportData"
@@ -88,16 +85,22 @@
         >
           <!-- Body Slots for Table -->
           <template v-slot:body-cell-facultyName="props">
-            <q-td :props="props">{{ props.row.facultyName }}</q-td>
+            <q-td :props="props" :style="{ textAlign: 'left' }">{{
+              props.row.facultyName
+            }}</q-td>
           </template>
           <template v-slot:body-cell-programName="props">
-            <q-td :props="props">{{ props.row.programName }}</q-td>
+            <q-td :props="props" :style="{ textAlign: 'left' }">{{
+              props.row.programName
+            }}</q-td>
           </template>
           <template v-slot:body-cell-courseName="props">
-            <q-td :props="props">{{ props.row.courseName }}</q-td>
+            <q-td :props="props" :style="{ textAlign: 'left' }">{{
+              props.row.courseName
+            }}</q-td>
           </template>
           <template v-slot:body-cell-action="props">
-            <q-td>
+            <q-td align="center">
               <q-btn
                 dense
                 flat
@@ -371,31 +374,40 @@ export default {
     const columns = [
       {
         name: "facultyName",
-        label: "Faculty",
+        label: "FACULTY",
         field: "facultyName",
-        align: "left",
+        headerStyle:
+          "background-color: #f0f0f0; font-weight: bold; text-align: center",
       },
       {
         name: "programName",
-        label: "Program",
+        label: "PROGRAM",
         field: "programName",
-        align: "left",
+        headerStyle:
+          "background-color: #f0f0f0; font-weight: bold; text-align: center",
       },
       {
         name: "courseName",
-        label: "Course Name",
+        label: "COURSE",
         field: "courseName",
-        align: "left",
+        headerStyle:
+          "background-color: #f0f0f0; font-weight: bold; text-align: center",
       },
 
-      { name: "action", label: "Action", field: "action", align: "left" },
+      {
+        name: "action",
+        label: "Action",
+        field: "action",
+        headerStyle:
+          "background-color: #f0f0f0; font-weight: bold; text-align: center",
+      },
     ];
 
     const addReportTableModal = ref(false);
     const updateReportTableModal = ref(false);
     const deleteReportTableModal = ref(false);
 
-    function showAddReportModal() {
+    function addRow() {
       addReportTableModal.value = true;
     }
 
@@ -455,7 +467,70 @@ export default {
       }.pdf`;
       doc.save(fileName);
     }
+    //---------------------------- Generate EXCEL ----------------------------------------
+    const downloadEXCEL = () => {
+      const ws = XLSX.utils.json_to_sheet(
+        reportData.value.map((row, index) => ({
+          // "#": index + 1,
+          INDEX: index + 1,
+          FACULTY: row.facultyName,
+          PROGRAM: row.programName,
+          COURSE: row.courseName,
+        }))
+      );
 
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Report");
+
+      XLSX.writeFile(wb, "report.xlsx");
+    };
+    //---------------------------------- Generate PDF -------------------------------------------------
+
+    const downloadPDF = () => {
+      const doc = new jsPDF();
+
+      // Save PDF name as Report
+      doc.setFontSize(12);
+      doc.text("REPORT", 105, 12, { align: "center" });
+
+      // Prepare table data
+      const tableColumn = ["INDEX", "FACULTY", "PROGRAM", "COURSE"];
+      const tableRows = reportData.value.map((row, index) => [
+        index + 1,
+        row.facultyName,
+        row.programName,
+        row.courseName,
+      ]);
+
+      // Apply border and styling to match the table header
+      doc.autoTable({
+        head: [tableColumn],
+        body: tableRows,
+        startY: 20, // Vertical start position
+        theme: "grid",
+        headStyles: {
+          fillColor: [255, 255, 255], // Header background color
+          textColor: [0, 0, 0], // Header text color
+          lineWidth: 0.1, // Border thickness for header
+          lineColor: [0, 0, 0], // Border color for header
+          halign: "center", // Horizontal alignment for header
+        },
+        styles: {
+          fontSize: 10, // Font size for table content
+          lineColor: [0, 0, 0], // Line color for table content
+          lineWidth: 0.1, // Line width for table content
+        },
+        tableLineColor: [0, 0, 0], // Global table line color
+        tableLineWidth: 0.1, // Global table line width
+        columnStyles: {
+          0: { halign: "center" }, // Center align the INDEX column
+        },
+      });
+
+      // Save the PDF
+      doc.save("report.pdf");
+    };
+    //--------------------------------------------------------------------------------------------
     function onRequest(props) {
       const { page, tableDataPerPage, sortBy, descending } = props.pagination;
       const filter = props.filter;
@@ -500,10 +575,12 @@ export default {
       addReportTableModal,
       updateReportTableModal,
       deleteReportTableModal,
-      showAddReportModal,
+      addRow,
       showUpdateReportModal,
       showDeleteReportModal,
       downloadPDFRow,
+      downloadEXCEL,
+      downloadPDF,
     };
   },
 };
