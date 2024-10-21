@@ -323,8 +323,21 @@
       <!-- Footer -->
       <q-footer class="bg-dark text-white">
         <div class="q-pa-md text-center">
-          Copyright © 2024 Pusat Pengurusan Infostruktur & Rangkaian (PPIR) |
-          UniSZA | All Rights Reserved
+          Copyright © 2024
+          <a
+            href="https://ppir.unisza.edu.my/"
+            target="_blank"
+            class="text-white"
+          >
+            Pusat Pengurusan Infostruktur & Rangkaian (PPIR)
+          </a>
+          |
+          <a
+            href="https://www.unisza.edu.my/"
+            target="_blank"
+            class="text-white"
+            >UniSZA </a
+          >| All Rights Reserved
         </div>
       </q-footer>
     </q-layout>
