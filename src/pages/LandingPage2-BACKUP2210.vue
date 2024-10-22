@@ -1,138 +1,73 @@
 <template>
   <q-card>
     <q-page>
+      <!-- Mega Menu -->
       <q-card-section>
-        <div class="row responsive-layout q-gutter-">
-          <!-- First column: wider (8/12 of the width) -->
-          <div class="col-12 col-md-8">
-            <q-card style="height: 450px; width: 100%" class="q-mr-md">
+        <div class="row responsive-layout">
+          <div class="col">
+            <div class="icon-menu">
               <q-card-section>
-                <div class="row">
-                  <div class="col q-mt-none">
-                    <h5 class="q-mt-none">
-                      Dashboard <br />
-                      <p class="text-caption text-grey q-mt-none">
-                        Overview of latest Visitor
-                      </p>
-                    </h5>
-                    <h5>
-                      10000
-                      <p class="text-caption text-grey q-mt-none">
-                        Total current visitor
-                      </p>
-                    </h5>
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <apexchart
-                      type="line"
-                      :options="chartOptions"
-                      :series="chartSeries"
-                    />
-                  </div>
-                </div>
+                <q-avatar size="md">
+                  <img src="images/e-CoFi.png" alt="icon" />
+                  <q-tooltip> e-CoFi </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/course-code.png" alt="icon" />
+                  <q-tooltip> Course Code </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/paper.png" alt="icon" />
+                  <q-tooltip> APMS </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/intern.png" alt="icon" />
+                  <q-tooltip> LI </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/course-structure.png" alt="icon" />
+                  <q-tooltip> Course Structure </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/u-time.png" alt="icon" />
+                  <q-tooltip> U-Time </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/OBE-icon.png" alt="icon" />
+                  <q-tooltip> OBE </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/SPB-icon.png" alt="icon" />
+                  <q-tooltip> SPB </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/muet-and-cefr.png" alt="icon" />
+                  <q-tooltip>MUET & CEFR </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/lecturer-info.png" alt="icon" />
+                  <q-tooltip> Lecturer Info </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/program-info.png" alt="icon" />
+                  <q-tooltip> Program Info </q-tooltip>
+                </q-avatar>
+                <!--------------------->
+                <q-avatar size="md" class="q-ml-xl">
+                  <img src="images/kalendar-akademik.png" alt="icon" />
+                  <q-tooltip> Kalendar Akademik </q-tooltip>
+                </q-avatar>
               </q-card-section>
-
-              <!-- Icon Cards -->
-              <div class="icon-cards row q-gutter-sm">
-                <q-card-section
-                  style="background-color: indigo; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="school"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Students <br />
-                      <strong>2000</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="
-                    background-color: slateblue;
-                    width: 220px;
-                    height: 70px;
-                  "
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="cast_for_education"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Lecturer <br />
-                      <strong>1000</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="background-color: purple; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="business"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Program <br />
-                      <strong>134</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="background-color: seagreen; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="download"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Full Agretation <br />
-                      <strong>100%</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-              </div>
-            </q-card>
-          </div>
-
-          <!-- Second column: smaller (4/12 of the width) -->
-          <div class="col-12 col-md-4">
-            <q-card style="width: 100%" class="q-ml-lg">
-              <q-card-section>
-                <!-- Content for the second card can go here -->
-                <div class="text-center">
-                  <q-card class="chart" flat bordered>
-                    <chart
-                      type="donut"
-                      :options="donutChartOption"
-                      :series="donutSeries"
-                    />
-                  </q-card>
-                </div>
-              </q-card-section>
-            </q-card>
+            </div>
           </div>
         </div>
       </q-card-section>
@@ -140,7 +75,168 @@
       <!-- <q-card class="main-card"> -->
       <div class="row responsive-layout">
         <div class="col">
+          <!-- Icon Cards -->
+          <div class="icon-cards">
+            <q-card-section
+              style="background-color: indigo; width: 220px; height: 70px"
+              class="q-ml-lg q-mr-md q-mt-md"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <q-icon
+                    name="school"
+                    size="40px"
+                    class="q-mb-sm q-ml-none"
+                    color="white"
+                  />
+                </div>
+                <div class="col text-center" style="color: white">
+                  Total Students <br />
+                  <strong>2000</strong>
+                </div>
+              </div>
+            </q-card-section>
+
+            <q-card-section
+              style="background-color: slateblue; width: 220px; height: 70px"
+              class="q-mx-md q-mt-md"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <q-icon
+                    name="cast_for_education"
+                    size="40px"
+                    class="q-mb-sm q-ml-none"
+                    color="white"
+                  />
+                </div>
+                <div class="col text-center" style="color: white">
+                  Total Lecturer <br />
+                  <strong>1000</strong>
+                </div>
+              </div>
+            </q-card-section>
+
+            <q-card-section
+              style="background-color: purple; width: 220px; height: 70px"
+              class="q-mx-md q-mt-md"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <q-icon
+                    name="business"
+                    size="40px"
+                    class="q-mb-sm q-ml-none"
+                    color="white"
+                  />
+                </div>
+                <div class="col text-center" style="color: white">
+                  Total Program <br />
+                  <strong>134</strong>
+                </div>
+              </div>
+            </q-card-section>
+
+            <q-card-section
+              style="background-color: seagreen; width: 220px; height: 70px"
+              class="q-mx-md q-mt-md"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <q-icon
+                    name="download"
+                    size="40px"
+                    class="q-mb-sm q-ml-none"
+                    color="white"
+                  />
+                </div>
+                <div class="col text-center" style="color: white">
+                  Full Agretation <br />
+                  <strong>100%</strong>
+                </div>
+              </div>
+            </q-card-section>
+          </div>
           <br />
+          <!------------------------------------------------------------ TABLE HIGHLIGHT DATES ------------------------------------------------------>
+          <!-- <q-card-section>
+            <q-markup-table
+              class="q-mb-sm q-mt-sm q-ml-sm"
+              style="width: 96%; border: 1px solid #ccc"
+            >
+              <caption
+                class="text-h6 text-center"
+                style="
+                  border-bottom: 1px solid #f0edf8;
+                  padding-bottom: 10px;
+                  font-weight: bold;
+                "
+              >
+                Highlight Dates
+              </caption>
+              <thead>
+                <tr style="background-color: #f0f0f0; color: #333">
+                  <th
+                    class="text-center"
+                    style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      border: 1px solid #ccc;
+                    "
+                  >
+                    Activity
+                  </th>
+                  <th
+                    class="text-center"
+                    style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      border: 1px solid #ccc;
+                    "
+                  >
+                    Session
+                  </th>
+                  <th
+                    class="text-center"
+                    style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      border: 1px solid #ccc;
+                    "
+                  >
+                    Level
+                  </th>
+                  <th
+                    class="text-center"
+                    style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      border: 1px solid #ccc;
+                    "
+                  >
+                    Date
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #e6f7ff">
+                  <td class="text-left" style="border: 1px solid #ccc">
+                    PENDAFTARAN PELAJAR BARU
+                  </td>
+                  <td class="text-left" style="border: 1px solid #ccc">
+                    SEM 1 2024/2025
+                  </td>
+                  <td class="text-left" style="border: 1px solid #ccc">
+                    IJAZAH SARJANA MUDA
+                  </td>
+                  <td class="text-left" style="border: 1px solid #ccc">
+                    29-09-2024 until 03-10-2024
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section> -->
+
           <!------------------------------------------------- Bar chart ------------------------------------------------------>
           <q-card-section
             class="q-ml-lg q-mr-sm"
@@ -172,6 +268,26 @@
             <div class="q-mt-lg text-h5 text-center">
               <b style="color: white">To Do List</b>
             </div>
+
+            <!-- <q-form class="q-gutter-md q-my-md">
+            <q-input
+              outlined
+              dense
+              v-model="task"
+              placeholder="Enter a task here"
+            />
+
+            <div class="row justify-center q-my-md">
+              <q-btn
+                color="primary"
+                label="SAVE"
+                @click="saveTask"
+                class="q-mr-sm"
+              />
+              <q-btn color="warning" label="GET TASKS" @click="getTasks" />
+            </div>
+          </q-form> -->
+
             <q-table
               :rows="tasks"
               :columns="columns"
@@ -525,8 +641,6 @@
 <script>
 import { ref, onMounted } from "vue";
 import { useQuasar } from "quasar";
-import VueApexCharts from "vue3-apexcharts";
-import chart from "vue3-apexcharts";
 import Chart from "chart.js/auto";
 import showHighlightsDate from "./HighlightDate.vue";
 
@@ -534,9 +648,6 @@ export default {
   name: "LandingPage2",
   components: {
     showHighlightsDate,
-    apexchart: VueApexCharts,
-    chart: VueApexCharts,
-    chart,
   },
 
   setup() {
@@ -544,30 +655,6 @@ export default {
     const rightDrawerOpen = ref(false);
     const date = ref("");
     const showHighlightsDateModal = ref(false);
-
-    const donutChartOption = ref({
-      chart: {
-        type: "donut",
-      },
-      labels: ["Diploma", "Degree", "Asasi", "Postgraduate"], // Categories
-      colors: ["#f78659", "#33FF57", "#f7599c", "#b659f7"], // Custom colors for each section
-      title: {
-        text: "Education Levels Distribution",
-      },
-      responsive: [
-        {
-          breakpoint: 600,
-          options: {
-            chart: {
-              width: 300,
-            },
-            legend: {
-              position: "bottom",
-            },
-          },
-        },
-      ],
-    });
 
     function gotoHighlightDate() {
       showHighlightsDateModal.value = true;
@@ -669,7 +756,7 @@ export default {
         },
       });
     });
-    const donutSeries = ref([30, 40, 15, 25]);
+
     return {
       rightDrawerOpen,
       date,
@@ -687,54 +774,6 @@ export default {
       ],
       showHighlightsDateModal,
       gotoHighlightDate,
-      chartSeries: [
-        {
-          name: "Sales",
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-        },
-        {
-          name: "Expenses",
-          data: [20, 29, 37, 36, 44, 45, 50, 58, 63],
-        },
-      ],
-      chartOptions: {
-        chart: {
-          height: 350,
-          type: "line",
-          zoom: {
-            enabled: false,
-          },
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        stroke: {
-          curve: "smooth",
-        },
-        title: {
-          text: "Sales and Expenses",
-          align: "left",
-        },
-        xaxis: {
-          categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-          ],
-        },
-        tooltip: {
-          shared: true,
-          intersect: false,
-        },
-      },
-      donutChartOption,
-      donutSeries,
     };
   },
   methods: {
@@ -790,7 +829,6 @@ export default {
 .icon-cards {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
 }
 
 .responsive-layout {

@@ -211,6 +211,12 @@ const routes = [
         component: () => import("pages/calendarCalendar.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
+      {
+        //Example for loading/ skeleton
+        path: "example-loading",
+        component: () => import("pages/ExampleLoading.vue"),
+        meta: { hideDrawer: false, hideRoleSelection: true },
+      },
     ],
   },
 
