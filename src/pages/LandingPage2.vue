@@ -1,28 +1,34 @@
 <template>
   <q-card>
-    <q-page>
+    <q-page style="background-color: black">
       <q-card-section>
         <div class="row responsive-layout q-gutter-none">
           <!-- First column: wider (8/12 of the width) -->
           <div class="col-12 col-md-8">
-            <q-card style="height: 400px; width: 100%" class="q-mr-md">
+            <q-card
+              style="height: 400px; width: 100%"
+              class="q-mr-md bg-indigo-2"
+            >
               <q-card-section>
                 <div class="row">
                   <div class="col q-mt-none">
-                    <h5 class="q-mt-none">
+                    <h6 class="q-mt-none">
                       Dashboard <br />
-                      <p class="text-caption text-grey q-mt-none">
+                      <p class="text-caption q-mt-none">
                         Overview of latest Visitor
                       </p>
-                    </h5>
+                    </h6>
                     <h5>
                       10000
-                      <p class="text-caption text-grey q-mt-none">
+                      <p class="text-caption q-mt-none">
                         Total current visitor
                       </p>
                     </h5>
                   </div>
-                  <div class="col-12 col-sm-6">
+                  <div
+                    class="col-12 col-sm-6"
+                    style="width: 580px; height: 500px"
+                  >
                     <apexchart
                       type="line"
                       :options="chartOptions"
@@ -36,10 +42,13 @@
 
           <!-- Donut Chart Column -->
           <div class="col-12 col-md-4">
-            <q-card style="width: 100%; height: 400px" class="q-mx-sm">
+            <q-card
+              style="width: 100%; height: 400px"
+              class="q-mx-sm bg-indigo-2"
+            >
               <q-card-section>
                 <div class="text-center">
-                  <q-card class="chart" flat bordered>
+                  <q-card class="chart bg-indigo-2" flat bordered>
                     <chart
                       type="donut"
                       :options="donutChartOption"
@@ -138,16 +147,19 @@
         <div class="row responsive-layout q-gutter-none">
           <!-- First column: wider (8/12 of the width) -->
           <div class="col-12 col-md-4">
-            <q-card style="height: 400px; width: 100%" class="q-mr-md">
+            <q-card
+              style="height: 400px; width: 100%"
+              class="q-mr-md bg-indigo-2"
+            >
               <q-card-section>
                 <p style="font-size: large; color: black">Upcoming Courses</p>
                 <q-list bordered separator>
                   <q-item v-for="course in upcomingCourses" :key="course.id">
                     <q-item-section>
-                      <div class="text-body text-white ellipsis">
+                      <div class="text-body text-bold ellipsis">
                         {{ course.name }}
                       </div>
-                      <div class="text-caption text-grey">
+                      <div class="text-caption">
                         {{ course.total }}
                       </div>
                     </q-item-section>
@@ -169,7 +181,10 @@
 
           <!-- Todo List -->
           <div class="col-12 col-md-8">
-            <q-card style="width: 100%; height: 400px" class="q-mx-sm">
+            <q-card
+              style="width: 100%; height: 400px"
+              class="q-mx-sm bg-indigo-2"
+            >
               <q-card-section>
                 <div class="row todo-list q-mt-lg text-h5 text-center">
                   <b style="color: black">To Do List</b>
@@ -180,7 +195,7 @@
                   row-key="id"
                   flat
                   bordered
-                  class="q-mt-md"
+                  class="q-mt-md bg-indigo-2"
                 >
                   <template v-slot:body-cell-actions="props">
                     <q-td align="center">
@@ -231,8 +246,8 @@ export default {
       chart: {
         type: "donut",
       },
-      labels: ["Diploma", "Degree", "Asasi", "Postgraduate"],
-      colors: ["#4700b3", "#bfff00", "#ff0080", "#bf00ff"],
+      labels: ["Diploma", "Degree", "Asasi", "Master", "PhD"],
+      colors: ["#4700b3", "#bfff00", "#ff0080", "#bf00ff", "#05a831"],
       title: {
         text: "Education Levels Distribution",
       },
@@ -277,7 +292,7 @@ export default {
 
     //-------------------------------------------------------------------------------------------------------
 
-    const donutSeries = ref([30, 40, 15, 25]);
+    const donutSeries = ref([30, 40, 15, 25, 20]);
     return {
       rightDrawerOpen,
       date,
@@ -293,13 +308,14 @@ export default {
         { name: "status", label: "Status", field: "status", align: "left" },
         { name: "actions", label: "Actions", align: "center" },
       ],
+      //--------------------- Line Graph -----------------------------
       chartSeries: [
         {
-          name: "Sales",
+          name: "Undergraduate Student",
           data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
         },
         {
-          name: "Expenses",
+          name: "Postgraduate Student",
           data: [20, 29, 37, 36, 44, 45, 50, 58, 63],
         },
       ],
@@ -320,21 +336,22 @@ export default {
           curve: "smooth",
         },
         title: {
-          text: "Sales and Expenses",
+          text: "Undergraduate And Postgraduate Student",
           align: "left",
         },
         xaxis: {
           categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
           ],
+          align: "center",
         },
         tooltip: {
           shared: true,
