@@ -2,10 +2,10 @@
   <q-card>
     <q-page>
       <q-card-section>
-        <div class="row responsive-layout q-gutter-">
+        <div class="row responsive-layout q-gutter-none">
           <!-- First column: wider (8/12 of the width) -->
           <div class="col-12 col-md-8">
-            <q-card style="height: 450px; width: 100%" class="q-mr-md">
+            <q-card style="height: 400px; width: 100%" class="q-mr-md">
               <q-card-section>
                 <div class="row">
                   <div class="col q-mt-none">
@@ -31,97 +31,13 @@
                   </div>
                 </div>
               </q-card-section>
-
-              <!-- Icon Cards -->
-              <div class="icon-cards row q-gutter-sm">
-                <q-card-section
-                  style="background-color: indigo; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="school"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Students <br />
-                      <strong>2000</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="
-                    background-color: slateblue;
-                    width: 220px;
-                    height: 70px;
-                  "
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="cast_for_education"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Lecturer <br />
-                      <strong>1000</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="background-color: purple; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="business"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Total Program <br />
-                      <strong>134</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-
-                <q-card-section
-                  style="background-color: seagreen; width: 220px; height: 70px"
-                >
-                  <div class="row">
-                    <div class="col-auto">
-                      <q-icon
-                        name="download"
-                        size="40px"
-                        class="q-mb-sm"
-                        color="white"
-                      />
-                    </div>
-                    <div class="col text-center" style="color: white">
-                      Full Agretation <br />
-                      <strong>100%</strong>
-                    </div>
-                  </div>
-                </q-card-section>
-              </div>
             </q-card>
           </div>
 
-          <!-- Second column: smaller (4/12 of the width) -->
+          <!-- Donut Chart Column -->
           <div class="col-12 col-md-4">
-            <q-card style="width: 100%" class="q-ml-lg">
+            <q-card style="width: 100%; height: 400px" class="q-mx-sm">
               <q-card-section>
-                <!-- Content for the second card can go here -->
                 <div class="text-center">
                   <q-card class="chart" flat bordered>
                     <chart
@@ -135,407 +51,173 @@
             </q-card>
           </div>
         </div>
-      </q-card-section>
+        <!--------------------------------------------------------------------------------------->
 
-      <!-- <q-card class="main-card"> -->
-      <div class="row responsive-layout">
-        <div class="col">
-          <br />
-          <!------------------------------------------------- Bar chart ------------------------------------------------------>
+        <!-- Icon Cards below line chart and donut chart -->
+        <div class="icon-cards row q-gutter-sm q-mt-sm">
           <q-card-section
-            class="q-ml-lg q-mr-sm"
-            style="
-              margin-top: 20px;
-              margin-bottom: 10px;
-              background-color: cornflowerblue;
-              width: 93%;
-            "
+            style="background-color: indigo; width: 250px; height: 90px"
           >
-            <div class="row q-col-gutter-lg">
-              <!-- First Bar Chart -->
-              <!-- <div class="col" style="width: 100px; height: 400px"> -->
-              <div class="col q-mx-lg">
-                <h6><b style="color: white">Undergraduate Student</b></h6>
-                <canvas id="bar-chart"></canvas>
+            <div class="row">
+              <div class="col-auto">
+                <q-icon
+                  name="school"
+                  size="40px"
+                  class="q-mb-sm"
+                  color="white"
+                />
               </div>
-
-              <!-- Second Bar Chart -->
-              <!-- <div class="col" style="width: 300px; height: 400px"> -->
-              <div class="col q-mx-lg">
-                <h6><b style="color: white">Postgraduate Student</b></h6>
-                <canvas id="bar-chart-2"></canvas>
+              <div class="col text-center" style="color: white">
+                Total Students <br />
+                <strong style="font-size: 2em">2000</strong>
               </div>
             </div>
-            <br />
+          </q-card-section>
 
-            <!------------------------------------------------ To Do List -------------------------------------------->
-            <div class="q-mt-lg text-h5 text-center">
-              <b style="color: white">To Do List</b>
+          <q-card-section
+            style="background-color: slateblue; width: 250px; height: 90px"
+          >
+            <div class="row">
+              <div class="col-auto">
+                <q-icon
+                  name="cast_for_education"
+                  size="40px"
+                  class="q-mb-sm"
+                  color="white"
+                />
+              </div>
+              <div class="col text-center" style="color: white">
+                Total Lecturers <br />
+                <strong style="font-size: 2em">1000</strong>
+              </div>
             </div>
-            <q-table
-              :rows="tasks"
-              :columns="columns"
-              row-key="id"
-              flat
-              bordered
-              class="q-mt-md"
-            >
-              <template v-slot:body-cell-actions="props">
-                <q-td align="center">
-                  <q-btn
-                    color="negative"
-                    label="DELETE"
-                    @click="deleteTask(props.row)"
-                    class="q-mr-sm"
-                  />
-                  <q-btn
-                    color="positive"
-                    label="FINISHED"
-                    @click="markFinished(props.row)"
-                  />
-                </q-td>
-              </template>
-            </q-table>
+          </q-card-section>
+
+          <q-card-section
+            style="background-color: purple; width: 250px; height: 90px"
+          >
+            <div class="row">
+              <div class="col-auto">
+                <q-icon
+                  name="business"
+                  size="40px"
+                  class="q-mb-sm"
+                  color="white"
+                />
+              </div>
+              <div class="col text-center" style="color: white">
+                Total Programs <br />
+                <strong style="font-size: 2em">134</strong>
+              </div>
+            </div>
+          </q-card-section>
+
+          <q-card-section
+            style="background-color: seagreen; width: 250px; height: 90px"
+          >
+            <div class="row">
+              <div class="col-auto">
+                <q-icon
+                  name="download"
+                  size="40px"
+                  class="q-mb-sm"
+                  color="white"
+                />
+              </div>
+              <div class="col text-center" style="color: white">
+                Full Aggregation <br />
+                <strong style="font-size: 2em">100%</strong>
+              </div>
+            </div>
           </q-card-section>
         </div>
+      </q-card-section>
 
-        <!--------------------------------------------- NOTICE BOARD --------------------------------------------------------------->
-        <q-card-section class="right-card q-mr-lg q-mt-md">
-          <!-------------------- HIGHLIGHT DATE ------------------------------>
-          <div class="row justify-center">
-            <!-- <q-btn label="HIGHLIGHT DATE" color="lime-8" @click="icon = true" /> -->
-            <q-btn
-              label="HIGHLIGHT DATE"
-              color="lime-8"
-              @click="gotoHighlightDate()"
-            />
+      <!--------------------------------- Upcoming Courses ------------------------------------------------>
+      <q-card-section>
+        <div class="row responsive-layout q-gutter-none">
+          <!-- First column: wider (8/12 of the width) -->
+          <div class="col-12 col-md-4">
+            <q-card style="height: 400px; width: 100%" class="q-mr-md">
+              <q-card-section>
+                <p style="font-size: large; color: black">Upcoming Courses</p>
+                <q-list bordered separator>
+                  <q-item v-for="course in upcomingCourses" :key="course.id">
+                    <q-item-section>
+                      <div class="text-body text-white ellipsis">
+                        {{ course.name }}
+                      </div>
+                      <div class="text-caption text-grey">
+                        {{ course.total }}
+                      </div>
+                    </q-item-section>
+                    <q-item-section side>
+                      <q-icon
+                        :name="showCourse ? 'visibility' : 'visibility_off'"
+                        class="cursor-pointer"
+                        size="xs"
+                        @click="tooglePasswordVisibility"
+                      >
+                        <q-tooltip> View Course </q-tooltip>
+                      </q-icon>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-card-section>
+            </q-card>
           </div>
-          <br />
-          <hr />
-          <br />
-          <div style="text-align: center">
-            <span style="color: white">NEWS & ACTIVITIES</span>
-          </div>
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-            <!------------------------------------------------------------------->
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              Undergraduate Program
-            </div>
-          </div>
-          <div class="q-mt-sm" style="color: white">DEGREE</div>
-          <hr />
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
 
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=57&Itemid=720&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Bachelor of Computer Science (Hons) Software Development
-              </a>
-            </div>
+          <!-- Todo List -->
+          <div class="col-12 col-md-8">
+            <q-card style="width: 100%; height: 400px" class="q-mx-sm">
+              <q-card-section>
+                <div class="row todo-list q-mt-lg text-h5 text-center">
+                  <b style="color: black">To Do List</b>
+                </div>
+                <q-table
+                  :rows="tasks"
+                  :columns="columns"
+                  row-key="id"
+                  flat
+                  bordered
+                  class="q-mt-md"
+                >
+                  <template v-slot:body-cell-actions="props">
+                    <q-td align="center">
+                      <q-btn
+                        color="negative"
+                        label="DELETE"
+                        @click="deleteTask(props.row)"
+                        class="q-mr-sm"
+                      />
+                      <q-btn
+                        color="positive"
+                        label="FINISHED"
+                        @click="markFinished(props.row)"
+                      />
+                    </q-td>
+                  </template>
+                </q-table>
+              </q-card-section>
+            </q-card>
           </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=65&Itemid=721&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Bachelor of Computer Science (Hons) Computer Network Security
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=66&Itemid=722&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Bachelor of Computer Science (Hons) Internet Computing
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=67&Itemid=723&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Bachelor of Information Technology (Hons) Informatics Media
-              </a>
-            </div>
-          </div>
-          <br />
-          <!------------------------------------------------------------------->
-          <div class="q-mt-sm" style="color: white">DIPLOMA</div>
-          <!------------------------------------------------------------------->
-          <hr />
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=62&Itemid=717&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Diploma In Computer Science
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=63&Itemid=718&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Diploma In Information Technology
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-            Postgraduate Program
-          </div>
-          <hr />
-          <!------------------------------------------------------------------->
-          <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-            <b> MIXED-MODE PROGRAM (FULL TIME AND PART TIME)</b>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=70&Itemid=727&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Master of Information Technology ( Management Informatics)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <!-- <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div> -->
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <b>RESEARCH PROGRAM ( FULL TIME)</b>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=68&Itemid=725&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Master of Science ( Computer Science)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=69&Itemid=726&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Master of Science ( Matematics)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=71&Itemid=729&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Doctor of Philosophy (Computer Science)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=72&Itemid=730&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Doctor of Philosophy (Matematics)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-          <div class="row">
-            <div class="col-auto">
-              <q-icon
-                name="school"
-                size="20px"
-                class="q-mb-sm q-ml-none q-mt-md"
-                color="white"
-              />
-            </div>
-
-            <div class="col text-left q-ml-sm q-mt-md" style="color: white">
-              <a
-                href="https://fik.unisza.edu.my/index.php?option=com_sppagebuilder&view=page&id=73&Itemid=731&lang=en"
-                target="_blank"
-                style="text-decoration: none; color: white"
-              >
-                Doctor of Philosophy (Statistics)
-              </a>
-            </div>
-          </div>
-          <!------------------------------------------------------------------->
-        </q-card-section>
-      </div>
-      <q-dialog v-model="showHighlightsDateModal"
-        ><showHighlightsDate
-      /></q-dialog>
+        </div>
+      </q-card-section>
     </q-page>
   </q-card>
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { useQuasar } from "quasar";
 import VueApexCharts from "vue3-apexcharts";
 import chart from "vue3-apexcharts";
-import Chart from "chart.js/auto";
-import showHighlightsDate from "./HighlightDate.vue";
+// import Chart from "chart.js/auto";
 
 export default {
   name: "LandingPage2",
   components: {
-    showHighlightsDate,
     apexchart: VueApexCharts,
-    chart: VueApexCharts,
     chart,
   },
 
@@ -543,16 +225,20 @@ export default {
     const $q = useQuasar();
     const rightDrawerOpen = ref(false);
     const date = ref("");
-    const showHighlightsDateModal = ref(false);
 
+    //------------------------------------------------------------------------------------------------------------
     const donutChartOption = ref({
       chart: {
         type: "donut",
       },
-      labels: ["Diploma", "Degree", "Asasi", "Postgraduate"], // Categories
-      colors: ["#f78659", "#33FF57", "#f7599c", "#b659f7"], // Custom colors for each section
+      labels: ["Diploma", "Degree", "Asasi", "Postgraduate"],
+      colors: ["#4700b3", "#bfff00", "#ff0080", "#bf00ff"],
       title: {
         text: "Education Levels Distribution",
+      },
+      legend: {
+        position: "bottom",
+        horizontalAlign: "center",
       },
       responsive: [
         {
@@ -568,107 +254,29 @@ export default {
         },
       ],
     });
-
-    function gotoHighlightDate() {
-      showHighlightsDateModal.value = true;
+    //----------------------------------------------- Upcoming Courses --------------------------------------
+    const upcomingCourses = ref([
+      {
+        id: 1,
+        name: "UI/ UX Design",
+        date: "Oct 20, 2024",
+        total: "30+ Courses",
+      },
+      { id: 2, name: "Web Dev", date: "Oct 25, 2024", total: "30+ Courses" },
+      {
+        id: 3,
+        name: "Mathematics",
+        date: "Oct 30, 2024",
+        total: "30+ Courses",
+      },
+    ]);
+    //------------------------------------------ function showCourse  --------------------------------------------------
+    function tooglePasswordVisibility() {
+      showCourse.value = !showCourse.value;
     }
-    onMounted(() => {
-      // First bar chart initialization
-      const ctx1 = document.getElementById("bar-chart").getContext("2d");
-      new Chart(ctx1, {
-        type: "bar",
-        data: {
-          labels: ["2024", "2023", "2022", "2021", "2020"],
-          datasets: [
-            {
-              label: "Data",
-              data: [4000, 5500, 4500, 3500, 2000], // Ensure you have as many data points as labels
-              backgroundColor: "#5c8809", // Bar color
-              borderWidth: 1,
-              borderColor: "white",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: {
-              beginAtZero: true,
-              max: 10000,
-              ticks: {
-                color: "white", // White font for x-axis labels
-              },
-              grid: {
-                color: "rgba(255, 255, 255, 0.2)", // Light white grid lines
-              },
-            },
-            y: {
-              ticks: {
-                color: "white", // White font for y-axis labels
-              },
-              grid: {
-                color: "rgba(255, 255, 255, 0.2)", // Light white grid lines
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-              labels: {
-                color: "white", // White font for legend labels
-              },
-            },
-          },
-        },
-      });
 
-      // Second bar chart initialization
-      const ctx2 = document.getElementById("bar-chart-2").getContext("2d");
-      new Chart(ctx2, {
-        type: "bar",
-        data: {
-          labels: ["2024", "2023", "2022", "2021", "2020"],
-          datasets: [
-            {
-              label: "Data",
-              data: [3000, 3500, 4000, 6000, 8000], // Data for the second chart
-              backgroundColor: "#270587", // Bar color for second chart
-              borderWidth: 1,
-              borderColor: "white", // White border for the bars
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: {
-              beginAtZero: true,
-              max: 10000,
-              ticks: {
-                color: "white", // White font for x-axis labels
-              },
-              grid: {
-                color: "rgba(255, 255, 255, 0.2)", // Light white grid lines
-              },
-            },
-            y: {
-              ticks: {
-                color: "white", // White font for y-axis labels
-              },
-              grid: {
-                color: "rgba(255, 255, 255, 0.2)", // Light white grid lines
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-              labels: {
-                color: "white", // White font for legend labels
-              },
-            },
-          },
-        },
-      });
-    });
+    //-------------------------------------------------------------------------------------------------------
+
     const donutSeries = ref([30, 40, 15, 25]);
     return {
       rightDrawerOpen,
@@ -685,8 +293,6 @@ export default {
         { name: "status", label: "Status", field: "status", align: "left" },
         { name: "actions", label: "Actions", align: "center" },
       ],
-      showHighlightsDateModal,
-      gotoHighlightDate,
       chartSeries: [
         {
           name: "Sales",
@@ -697,6 +303,8 @@ export default {
           data: [20, 29, 37, 36, 44, 45, 50, 58, 63],
         },
       ],
+      //-----------------------------------------------------------------------------------------------------
+
       chartOptions: {
         chart: {
           height: 350,
@@ -733,23 +341,14 @@ export default {
           intersect: false,
         },
       },
+      //-----------------------------------------------------------------------------------------------------
+
       donutChartOption,
       donutSeries,
+      upcomingCourses,
     };
   },
   methods: {
-    goTo(page) {
-      // Define your navigation logic here
-      if (page === "cuba") {
-        console.log("Navigate to Cuba");
-      } else if (page === "test") {
-        console.log("Navigate to Test");
-      } else if (page === "trsk") {
-        console.log("Navigate to Trsk");
-      } else if (page === "asrama") {
-        console.log("Navigate to Asrama");
-      }
-    },
     saveTask() {
       if (this.task) {
         this.tasks.push({
@@ -785,43 +384,64 @@ export default {
   background-color: cadetblue;
   padding: 20px;
   box-sizing: border-box;
+  margin-top: 40px;
 }
 
 .icon-cards {
   display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 0;
 }
 
 .responsive-layout {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 0px;
+}
+.upcoming-courses {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: 20px;
+}
+.todo-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-left: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .responsive-layout {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 16px;
   }
 
-  .icon-cards,
-  .right-card,
-  .q-card-section {
-    width: 100% !important;
-    margin: 0 auto !important;
+  .icon-cards {
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
   }
-}
-canvas {
-  max-width: 400px;
-  max-height: 350px;
-}
-.mega-menu {
-  /* display: flex; */
-  /* justify-content: flex-start; */
-  padding: none;
-}
-.child-menu {
-  left: 0; /* Aligns to the left */
-  position: fixed; /* Absolute positioning to enable left alignment */
+
+  .icon-cards q-card-section {
+    flex: 1 1 100%;
+    margin: 20px 0;
+  }
+
+  .responsive-layout .col-12.col-md-8 {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 </style>
