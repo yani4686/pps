@@ -7,7 +7,7 @@
           <div class="col-12 col-md-8">
             <q-card
               style="height: 400px; width: 100%"
-              class="q-mr-md bg-indigo-2"
+              class="q-mr-md bg-amber-1"
             >
               <q-card-section>
                 <div class="row">
@@ -44,11 +44,11 @@
           <div class="col-12 col-md-4">
             <q-card
               style="width: 100%; height: 400px"
-              class="q-mx-sm bg-indigo-2"
+              class="q-mx-sm bg-amber-1"
             >
               <q-card-section>
                 <div class="text-center">
-                  <q-card class="chart bg-indigo-2" flat bordered>
+                  <q-card class="chart bg-amber-1" flat bordered>
                     <chart
                       type="donut"
                       :options="donutChartOption"
@@ -149,7 +149,7 @@
           <div class="col-12 col-md-4">
             <q-card
               style="height: 400px; width: 100%"
-              class="q-mr-md bg-indigo-2"
+              class="q-mr-md bg-amber-1"
             >
               <q-card-section>
                 <p style="font-size: large; color: black">Upcoming Courses</p>
@@ -183,7 +183,7 @@
           <div class="col-12 col-md-8">
             <q-card
               style="width: 100%; height: 400px"
-              class="q-mx-sm bg-indigo-2"
+              class="q-mx-sm bg-amber-1"
             >
               <q-card-section>
                 <div class="row todo-list q-mt-lg text-h5 text-center">
@@ -195,7 +195,7 @@
                   row-key="id"
                   flat
                   bordered
-                  class="q-mt-md bg-indigo-2"
+                  class="q-mt-md bg-amber-1"
                 >
                   <template v-slot:body-cell-actions="props">
                     <q-td align="center">
