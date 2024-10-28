@@ -22,7 +22,7 @@
   <div class="q-pa-sm">
     <!-- Cards Container -->
     <div class="row card-layout q-pa-lg q-ma-lg">
-      <q-card class="q-mr-lg" style="width: 310px">
+      <q-card class="q-mr-lg orange-card" style="width: 310px">
         <q-card-section>
           <q-icon name="library_add" size="lg" class="icon-left" />
           <div class="card-text">
@@ -31,30 +31,33 @@
           </div>
         </q-card-section>
       </q-card>
-      <q-card class="q-mr-lg" style="width: 310px">
+      <!---------------------------------------------->
+      <q-card class="q-mr-lg purple-card" style="width: 310px">
         <q-card-section>
-          <q-icon name="library_add" size="lg" class="icon-left" />
+          <q-icon name="assignment_turned_in" size="lg" class="icon-left" />
           <div class="card-text">
-            <div class="text-subtitle2">New Programmes</div>
-            <div class="text-h5">100</div>
+            <div class="text-subtitle2">Programmes approved by Faculty</div>
+            <div class="text-h5">294</div>
           </div>
         </q-card-section>
       </q-card>
-      <q-card class="q-mr-lg" style="width: 310px">
+      <!---------------------------------------------->
+      <q-card class="q-mr-lg blue-card" style="width: 310px">
         <q-card-section>
-          <q-icon name="library_add" size="lg" class="icon-left" />
+          <q-icon name="add_task" size="lg" class="icon-left" />
           <div class="card-text">
-            <div class="text-subtitle2">New Programmes</div>
-            <div class="text-h5">100</div>
+            <div class="text-subtitle2">Unverified Programmes</div>
+            <div class="text-h5">92%</div>
           </div>
         </q-card-section>
       </q-card>
-      <q-card style="width: 300px">
+      <!---------------------------------------------->
+      <q-card class="green-card" style="width: 300px">
         <q-card-section>
-          <q-icon name="library_add" size="lg" class="icon-left" />
+          <q-icon name="done_all" size="lg" class="icon-left" />
           <div class="card-text">
-            <div class="text-subtitle2">New Programmes</div>
-            <div class="text-h5">100</div>
+            <div class="text-subtitle2">Approval Programmes</div>
+            <div class="text-h5">80%</div>
           </div>
         </q-card-section>
       </q-card>
