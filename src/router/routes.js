@@ -156,11 +156,11 @@ const routes = [
         component: () => import("pages/ChartPage.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
-      {
-        path: "modal",
-        component: () => import("pages/ComponentModal.vue"),
-        meta: { hideDrawer: false, hideRoleSelection: true },
-      },
+      // {
+      //   path: "modal",
+      //   component: () => import("pages/ComponentModal.vue"),
+      //   meta: { hideDrawer: false, hideRoleSelection: true },
+      // },
       {
         path: "tab",
         component: () => import("pages/ComponentTab.vue"),
@@ -176,11 +176,11 @@ const routes = [
         component: () => import("pages/ComponentCollapsible.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
-      {
-        path: "markahonline",
-        component: () => import("pages/DashboardPage1.vue"),
-        meta: { hideDrawer: false, hideRoleSelection: true },
-      },
+      // {
+      //   path: "markahonline",
+      //   component: () => import("pages/DashboardPage1.vue"),
+      //   meta: { hideDrawer: false, hideRoleSelection: true },
+      // },
       // {
       //   path: "Dashboard",
       //   component: () => import("pages/DashboardPage1.vue"),
