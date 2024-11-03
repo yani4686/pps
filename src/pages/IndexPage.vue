@@ -76,7 +76,7 @@ export default {
   methods: {
     navigateToPage(title) {
       const formattedTitle = title.replace(/\s+/g, "").toLowerCase();
-      this.$router.push(`/${formattedTitle}`);
+      this.$router.push(`dashboard/${formattedTitle}`);
     },
   },
 };

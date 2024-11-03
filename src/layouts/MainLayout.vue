@@ -479,7 +479,7 @@ export default {
       {
         title: "Forms",
         icon: "assignment_add",
-        link: "#/form",
+        link: "/dashboard/form",
       },
       {
         title: "Tables",
