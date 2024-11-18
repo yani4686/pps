@@ -8,6 +8,7 @@ const routes = [
     path: "/:token",
     component: () => import("pages/LoginProcess.vue"),
   },
+
   {
     path: "/portal",
     component: () => import("src/layouts/PortalLayoutwhite.vue"),
