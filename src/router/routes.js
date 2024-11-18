@@ -140,11 +140,13 @@ const routes = [
         // meta: { hideBreadcrumbs: false, hideRoleSelection: false }, // show breadcrumbs and role selection
       },
       {
-        path: "/dashboard",
-        component: () => import("pages/DashboardPage1.vue"),
-        meta: { hideDrawer: false },
-        hideBreadcrumbs: false,
-        hideRoleSelection: false,
+        path: "othermenu",
+        component: () => import("pages/OtherMenu.vue"),
+        meta: {
+          hideDrawer: false,
+          hideBreadcrumbs: false,
+          hideRoleSelection: false,
+        },
       },
 
       {

@@ -181,17 +181,13 @@
             style="color: white"
             clickable
             v-ripple
-            @click="router.push('/#/dashboard')"
+            @click="router.push('/dashboard/dashboardpage')"
           >
             <q-item-section avatar>
               <q-icon name="dashboard" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>
-                <a href="#/dashboard/dashboard" style="color: white"
-                  >Dashboard</a
-                ></q-item-label
-              >
+              <q-item-label> Dashboard </q-item-label>
             </q-item-section>
           </q-item>
           <!-- Component Menu with Submenu -->

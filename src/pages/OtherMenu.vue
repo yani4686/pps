@@ -130,6 +130,7 @@
 </template>
 
 <script>
+import { useQuasar } from "quasar";
 import { ref } from "vue";
 import chart from "vue3-apexcharts";
 
@@ -297,7 +298,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .col-12.col-md-6 {
   margin-bottom: 5px; /* Adjust this value for the vertical gap between the columns */
   padding-left: 5px; /* Adjust this to control space between cards */
