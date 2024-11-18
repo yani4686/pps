@@ -272,6 +272,7 @@
             v-for="link in linksList"
             :key="link.title"
             v-bind="link"
+            @click="navigateTo(item.link)"
           />
         </q-list>
       </q-drawer>
@@ -479,18 +480,17 @@ export default {
       {
         title: "Forms",
         icon: "assignment_add",
-        link: "form",
+        link: "/dashboard/form",
       },
       {
         title: "Tables",
         icon: "table_chart",
-        link: "#/report-table",
+        link: "/dashboard/report-table",
       },
-
       {
         title: "Chart",
         icon: "bar_chart",
-        link: "#/chart",
+        link: "/dashboard/chart",
       },
     ];
 
@@ -527,6 +527,9 @@ export default {
     onRoleChange(newRole) {
       this.selectedRole = newRole; // Update the selected role
       console.log("Selected Role:", newRole);
+    },
+    navigateTo(link) {
+      this.$router.push(link);
     },
   },
 };
