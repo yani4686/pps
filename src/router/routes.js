@@ -8,6 +8,7 @@ const routes = [
     path: "/:token",
     component: () => import("pages/LoginProcess.vue"),
   },
+
   {
     path: "/portal",
     component: () => import("src/layouts/PortalLayoutwhite.vue"),
@@ -139,11 +140,13 @@ const routes = [
         // meta: { hideBreadcrumbs: false, hideRoleSelection: false }, // show breadcrumbs and role selection
       },
       {
-        path: "/dashboard",
-        component: () => import("pages/DashboardPage1.vue"),
-        meta: { hideDrawer: false },
-        hideBreadcrumbs: false,
-        hideRoleSelection: false,
+        path: "othermenu",
+        component: () => import("pages/OtherMenu.vue"),
+        meta: {
+          hideDrawer: false,
+          hideBreadcrumbs: false,
+          hideRoleSelection: false,
+        },
       },
 
       {
@@ -156,11 +159,11 @@ const routes = [
         component: () => import("pages/ChartPage.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
-      {
-        path: "modal",
-        component: () => import("pages/ComponentModal.vue"),
-        meta: { hideDrawer: false, hideRoleSelection: true },
-      },
+      // {
+      //   path: "modal",
+      //   component: () => import("pages/ComponentModal.vue"),
+      //   meta: { hideDrawer: false, hideRoleSelection: true },
+      // },
       {
         path: "tab",
         component: () => import("pages/ComponentTab.vue"),
@@ -176,11 +179,11 @@ const routes = [
         component: () => import("pages/ComponentCollapsible.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
-      {
-        path: "markahonline",
-        component: () => import("pages/DashboardPage1.vue"),
-        meta: { hideDrawer: false, hideRoleSelection: true },
-      },
+      // {
+      //   path: "markahonline",
+      //   component: () => import("pages/DashboardPage1.vue"),
+      //   meta: { hideDrawer: false, hideRoleSelection: true },
+      // },
       // {
       //   path: "Dashboard",
       //   component: () => import("pages/DashboardPage1.vue"),
@@ -209,6 +212,12 @@ const routes = [
       {
         path: "calendar-calendar",
         component: () => import("pages/calendarCalendar.vue"),
+        meta: { hideDrawer: false, hideRoleSelection: true },
+      },
+      {
+        //Example for loading/ skeleton
+        path: "example-loading",
+        component: () => import("pages/ExampleLoading.vue"),
         meta: { hideDrawer: false, hideRoleSelection: true },
       },
     ],

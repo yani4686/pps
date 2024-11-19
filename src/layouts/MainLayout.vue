@@ -149,7 +149,7 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/landingpage2" style="color: white"
+                    <a href="#/dashboard/landingpage2" style="color: white"
                       >Landing Page 2</a
                     >
                   </q-item-label>
@@ -158,7 +158,7 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/landingpage3" style="color: white"
+                    <a href="#/dashboard/landingpage3" style="color: white"
                       >Landing Page 3</a
                     >
                   </q-item-label>
@@ -167,7 +167,7 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/landingpage4" style="color: white"
+                    <a href="#/dashboard/landingpage4" style="color: white"
                       >Landing Page 4</a
                     >
                   </q-item-label>
@@ -181,17 +181,13 @@
             style="color: white"
             clickable
             v-ripple
-            @click="router.push('/#/dashboard')"
+            @click="router.push('/dashboard/dashboardpage')"
           >
             <q-item-section avatar>
               <q-icon name="dashboard" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>
-                <a href="#/dashboard" style="color: white"
-                  >Dashboard</a
-                ></q-item-label
-              >
+              <q-item-label> Dashboard </q-item-label>
             </q-item-section>
           </q-item>
           <!-- Component Menu with Submenu -->
@@ -216,21 +212,23 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/tab" style="color: white">Tab</a>
+                    <a href="#/dashboard/tab" style="color: white">Tab</a>
                   </q-item-label>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/accordian" style="color: white">Accordian</a>
+                    <a href="#/dashboard/accordian" style="color: white"
+                      >Accordian</a
+                    >
                   </q-item-label>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/button" style="color: white">Button</a>
+                    <a href="#/dashboard/button" style="color: white">Button</a>
                   </q-item-label>
                 </q-item-section>
               </q-item>
@@ -248,7 +246,7 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/event-calendar" style="color: white"
+                    <a href="#/dashboard/event-calendar" style="color: white"
                       >Event Calendar</a
                     >
                   </q-item-label>
@@ -257,7 +255,7 @@
               <q-item>
                 <q-item-section>
                   <q-item-label>
-                    <a href="#/schedule-calendar" style="color: white"
+                    <a href="#/dashboard/schedule-calendar" style="color: white"
                       >Schedule Calendar</a
                     >
                   </q-item-label>
@@ -323,8 +321,21 @@
       <!-- Footer -->
       <q-footer class="bg-dark text-white">
         <div class="q-pa-md text-center">
-          Copyright © 2024 Pusat Pengurusan Infostruktur & Rangkaian (PPIR) |
-          UniSZA | All Rights Reserved
+          Copyright © 2024
+          <a
+            href="https://ppir.unisza.edu.my/"
+            target="_blank"
+            class="text-white"
+          >
+            Pusat Pengurusan Infostruktur & Rangkaian (PPIR)
+          </a>
+          |
+          <a
+            href="https://www.unisza.edu.my/"
+            target="_blank"
+            class="text-white"
+            >UniSZA </a
+          >| All Rights Reserved
         </div>
       </q-footer>
     </q-layout>
@@ -388,25 +399,25 @@ export default {
 
     // Check if the current route matches the Component submenu path
     const isComponentMenuExpanded = computed(() =>
-      route.path.includes("/landingpage/component")
+      route.path.includes("#/dashboard/component")
     );
 
     // Check if the current route matches the Calendar submenu path
     const isCalendarMenuExpanded = computed(() =>
-      route.path.includes("/landingpage/calendar")
+      route.path.includes("#/dashboard/calendar")
     );
 
     // Dynamic quick links for specific paths
     const isQuickLinksExpanded = computed(() => {
       return (
-        route.path.includes("/landingpage/portalpensyarah") ||
-        route.path.includes("/landingpage/portalfakulti")
+        route.path.includes("#/dashboard/portalpensyarah") ||
+        route.path.includes("#/dashboard/portalfakulti")
       );
     });
 
     // Dynamically control the quick links submenu based on route
     const quickLinks = computed(() => {
-      if (route.path.includes("/landingpage/portalpensyarah")) {
+      if (route.path.includes("#/dashboard/portalpensyarah")) {
         return [
           { title: "Assessment", link: "#/landingpage/assessment" },
           { title: "DCI", link: "#/landingpage/dci" },
@@ -466,18 +477,17 @@ export default {
       {
         title: "Forms",
         icon: "assignment_add",
-        link: "#/form",
+        link: "#/dashboard/form",
       },
       {
         title: "Tables",
         icon: "table_chart",
-        link: "#/report-table",
+        link: "#/dashboard/report-table",
       },
-
       {
         title: "Chart",
         icon: "bar_chart",
-        link: "#/chart",
+        link: "#/dashboard/chart",
       },
     ];
 
@@ -515,6 +525,10 @@ export default {
       this.selectedRole = newRole; // Update the selected role
       console.log("Selected Role:", newRole);
     },
+    // navigateTo(link) {
+    //   this.$router.push(`dashboard/${link}`);
+    //   // this.$router.push(`dashboard/${formattedTitle}`);
+    // },
   },
 };
 </script>

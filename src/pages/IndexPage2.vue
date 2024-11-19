@@ -86,15 +86,15 @@ export default {
     // Split the mainportal array into two batches
     const mainportal = [
       {
-        title: "Portal Pensyarah",
+        title: "Menu 1",
         image: staffImage,
       },
       {
-        title: "Portal Fakulti",
+        title: "Menu 2",
         image: fpImage,
       },
       {
-        title: "Portal Akademik",
+        title: "Menu 3",
         image: bendahariImage,
       },
       {
@@ -132,8 +132,8 @@ export default {
   },
   methods: {
     navigateToPage(title) {
-      const formattedTitle = title.replace(/\s+/g, ""); // Remove spaces entirely
-      this.$router.push(`/landingpage/${formattedTitle}`);
+      const formattedTitle = title.replace(/\s+/g, "").toLowerCase();
+      this.$router.push(`${formattedTitle}`);
     },
   },
 };
